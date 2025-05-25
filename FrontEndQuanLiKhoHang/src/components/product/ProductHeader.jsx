@@ -73,8 +73,8 @@ const ProductHeader = () => {
         <button
           className={`px-4 py-2 rounded-md transition ${
             activeForm === "import"
-              ? "bg-white text-blue-600"
-              : "bg-blue-700 hover:bg-blue-800"
+              ? "bg-blue-600 text-white"
+              : "bg-white text-blue-600 border-blue-600 hover:bg-blue-600 hover:text-white"
           }`}
           onClick={() => handleButtonClick("import")}
         >
@@ -83,8 +83,8 @@ const ProductHeader = () => {
         <button
           className={`px-4 py-2 rounded-md transition ${
             activeForm === "export"
-              ? "bg-white text-blue-600"
-              : "bg-blue-700 hover:bg-blue-800"
+              ? "bg-blue-600 text-white"
+              : "bg-white text-blue-600 border-blue-600 hover:bg-blue-600 hover:text-white"
           }`}
           onClick={() => handleButtonClick("export")}
         >
@@ -93,8 +93,8 @@ const ProductHeader = () => {
         <button
           className={`px-4 py-2 rounded-md transition ${
             activeForm === "inventory"
-              ? "bg-white text-blue-600"
-              : "bg-blue-700 hover:bg-blue-800"
+              ? "bg-blue-600 text-white"
+              : "bg-white text-blue-600 border-blue-600 hover:bg-blue-600 hover:text-white"
           }`}
           onClick={() => handleButtonClick("inventory")}
         >
@@ -111,7 +111,7 @@ const ProductHeader = () => {
             </h2>
             <div className="space-y-4">
               <div>
-                <label className="block text-gray-700 mb-2">
+                <label className="block text-left text-gray-700 mb-2">
                   Mã phiếu nhập:
                 </label>
                 <input
@@ -121,7 +121,7 @@ const ProductHeader = () => {
                 />
               </div>
               <div>
-                <label className="block text-gray-700 mb-2">
+                <label className="block text-left text-gray-700 mb-2">
                   Tên nhân viên:
                 </label>
                 <input
@@ -131,7 +131,7 @@ const ProductHeader = () => {
                 />
               </div>
               <div>
-                <label className="block text-gray-700 mb-2">
+                <label className="block text-left text-gray-700 mb-2">
                   Đơn vị vận chuyển:
                 </label>
                 <input
@@ -141,7 +141,7 @@ const ProductHeader = () => {
                 />
               </div>
               <div>
-                <label className="block text-gray-700 mb-2">
+                <label className="block text-left text-gray-700 mb-2">
                   Nhà cung cấp:
                 </label>
                 <input
@@ -151,7 +151,7 @@ const ProductHeader = () => {
                 />
               </div>
               <div>
-                <label className="block text-gray-700 mb-2">
+                <label className="block text-left text-gray-700 mb-2">
                   Ngày nhập kho:
                 </label>
                 <input
@@ -183,11 +183,11 @@ const ProductHeader = () => {
                             <input
                               type="text"
                               className="w-full p-1 border border-gray-300"
-                              value={product.name}
+                              value={product.productName}
                               onChange={(e) =>
                                 updateProduct(
                                   product.id,
-                                  "name",
+                                  "Tên sản phẩm",
                                   e.target.value
                                 )
                               }
@@ -201,7 +201,7 @@ const ProductHeader = () => {
                               onChange={(e) =>
                                 updateProduct(
                                   product.id,
-                                  "price",
+                                  "Giá",
                                   Number(e.target.value)
                                 )
                               }
@@ -211,11 +211,11 @@ const ProductHeader = () => {
                             <input
                               type="number"
                               className="w-full p-1 border border-gray-300"
-                              value={product.quantity}
+                              value={product.stock}
                               onChange={(e) =>
                                 updateProduct(
                                   product.id,
-                                  "quantity",
+                                  "Tồn Kho",
                                   Number(e.target.value)
                                 )
                               }
@@ -229,7 +229,7 @@ const ProductHeader = () => {
                               onChange={(e) =>
                                 updateProduct(
                                   product.id,
-                                  "description",
+                                  "Mô tả",
                                   e.target.value
                                 )
                               }
