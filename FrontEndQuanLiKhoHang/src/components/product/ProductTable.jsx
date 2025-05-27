@@ -78,7 +78,7 @@ const ProductTable = ({ currentItems, startIdx }) => {
   const emptyState = (
     <EmptyState
       icon={Package}
-      title="Không tìm thấy sản phẩm"
+      title="Không tìm thấy hàng phù hợp"
       description="Hãy thử điều chỉnh tiêu chí tìm kiếm của bạn"
     />
   );
